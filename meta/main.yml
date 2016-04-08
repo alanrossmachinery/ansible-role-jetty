@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  author: Slava Semushin
+  author: Geoffroy Arnoud (Original from Slava Semushin)
   description: Installs Jetty web-server from tarball
   license: GPLv2
   min_ansible_version: 1.2
@@ -12,5 +12,5 @@ galaxy_info:
   - system
   - web
 dependencies:
-  - php-coder.oraclejdk
+  - williamyeh.oracle-java
 

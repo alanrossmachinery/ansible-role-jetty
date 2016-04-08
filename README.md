@@ -3,14 +3,16 @@ Ansible role for Jetty installation
 
 Installs Jetty web-server from tarball.
 
-It's inspired by [puppet-jetty](https://github.com/maestrodev/puppet-jetty) module and tries to do the same things but for Ansible.
+It's inspired by [php-coder.jetty](https://github.com/php-coder/ansible-role-jetty) role, and adds the following changes:
+* Changed dependency for JDK to [williamyeh.oracle-java](https://galaxy.ansible.com/williamyeh/oracle-java/)
+* Changed default Jetty version to a newer one
 
 Role Variables
 --------------
 
 * `jetty_version`
 
-  Version of Jetty that will be installed. (Default is `9.2.3.v20140905`.)
+  Version of Jetty that will be installed. (Default is `9.3.8.v20160314`.)
 
 * `jetty_host`
 
@@ -68,14 +70,14 @@ Actions role
 How to install
 --------------
 
-    ansible-galaxy install php-coder.jetty
+    ansible-galaxy install geoffroya.jetty
 
 For more installation's options/variants read the documentation: http://docs.ansible.com/galaxy.html
 
 Dependencies
 ------------
 
-* [php-coder.oraclejdk](https://galaxy.ansible.com/list#/roles/2093)
+* [williamyeh.oracle-java](https://galaxy.ansible.com/williamyeh/oracle-java/)
 
 Example Playbook
 ----------------
@@ -84,14 +86,14 @@ Example of usage with default parameters:
 
     - hosts: all
       roles:
-         - php-coder.jetty
+         - geoffroya.jetty
 
 Example of usage with custom host/port and Java options:
 
     - hosts: all
       roles:
          - {
-             role: php-coder.jetty,
+             role: geoffroya.jetty,
              jetty_host: '127.0.0.1',
              jetty_port: 9090,
              jetty_java_options: '-XX:+UseCompressedOops -Dsun.rmi.dgc.client.gcInterval=86400000 -Dsun.rmi.dgc.server.gcInterval=86400000'
@@ -103,7 +105,7 @@ Example of usage with existing user and group:
     - hosts: all
       roles:
          - {
-             role: php-coder.jetty,
+             role: geoffroya.jetty,
              jetty_user_create: false,
              jetty_user_login: 'www-data',
              jetty_group_create: false,
@@ -118,4 +120,5 @@ GPLv2
 Author Information
 ------------------
 
-Slava Semushin (slava.semushin@gmail.com)
+99,99% of the work done by Slava Semushin (slava.semushin@gmail.com)
+0.01% done by me Geoffroy Arnoud
