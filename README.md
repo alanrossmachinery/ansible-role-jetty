@@ -4,7 +4,7 @@ Ansible role for Jetty installation
 Installs Jetty web-server from tarball.
 
 It's inspired by [php-coder.jetty](https://github.com/php-coder/ansible-role-jetty) role, and adds the following changes:
-* Changed dependency for JDK to [williamyeh.oracle-java](https://galaxy.ansible.com/williamyeh/oracle-java/)
+
 * Changed default Jetty version to a newer one
 
 Role Variables
