@@ -45,7 +45,7 @@
 - name: Jetty | Create init script
   file:
     src="{{ jetty_dst_dir}}/jetty/bin/jetty.sh"
-    dest=/etc/init.d/jetty
+    dest=/etc/init.d/{{ jetty_service }}
     state=link
 
 - name: Jetty | Create default configuration file
@@ -55,11 +55,11 @@
     owner=root
     group=root
     mode=0644
-  notify: Restart Jetty
+#  notify: Restart Jetty
 
-- name: Jetty | Run and enable Jetty to start on boot
-  service:
-    name=jetty
-    state=started
-    enabled=yes
+#- name: Jetty | Run and enable Jetty to start on boot
+#  service:
+#    name=jetty
+#    state=started
+#    enabled=yes
 
