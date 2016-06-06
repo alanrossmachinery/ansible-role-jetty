@@ -11,6 +11,6 @@ galaxy_info:
   categories:
   - system
   - web
-dependencies:
+#dependencies:
 #  - williamyeh.oracle-java
 
