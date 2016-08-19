@@ -2,7 +2,7 @@
 
 - name: Jetty | Download distribution tarball
   get_url:
-    url="http://eclipse.org/downloads/download.php?file=/jetty/{{ jetty_version }}/dist/jetty-distribution-{{ jetty_version }}.tar.gz&r=1"
+    url="http://repo1.maven.org/maven2/org/eclipse/jetty/jetty-distribution/{{ jetty_version }}/jetty-distribution-{{ jetty_version }}.tar.gz"
     dest={{ jetty_src_dir }}
 
 - name: Jetty | Create group
